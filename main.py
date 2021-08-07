@@ -1,15 +1,5 @@
-# © BugHunterCodeLabs ™
-# © bughunter0
-# 2021
-# Copyright - https://en.m.wikipedia.org/wiki/Fair_use
-
-import os 
-from os import error
-import logging
 import pyrogram
-from decouple import config
 from pyrogram import Client, filters
-from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from pyrogram.types import User, Message
 
     
@@ -22,3 +12,10 @@ bughunter0 = Client(
 
 @bughunter0.on_message(filters.command(["start"]))
 async def start(bot, update):
+ await message.reply_text("Ready to Work")
+
+@bughunter0.on_message(filters.regex("/" ) | filters.service)
+async def delete(bot,message):
+ await message.delete()  
+
+bughunter0.run()                              
