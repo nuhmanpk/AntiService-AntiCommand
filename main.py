@@ -8,7 +8,7 @@ bughunter0 = Client(
     api_hash = os.environ["API_HASH"]
 )
 @bughunter0.on_message(filters.command(["start"]))
-async def start(bot, update):
+async def start(bot, message):
  await message.reply_text("Ready to Work")
 
 @bughunter0.on_message(filters.regex("/" ) | filters.service)
